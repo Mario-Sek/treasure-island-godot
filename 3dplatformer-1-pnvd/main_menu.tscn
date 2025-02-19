@@ -1,0 +1,87 @@
+[gd_scene load_steps=7 format=3 uid="uid://xfi18au3jadl"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_66eox"]
+[ext_resource type="Shader" path="res://end_screen.gdshader" id="6_kcjlx"]
+[ext_resource type="Texture2D" uid="uid://de4uk1cf5ofim" path="res://logo.png" id="6_umd6g"]
+[ext_resource type="AudioStream" uid="uid://fplp2sutcqos" path="res://sounds/Village.MP3" id="7_ofhgs"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_privy"]
+load_path = "res://.godot/imported/homeImg.jpg-36c273a38e5a3db6319d8511dc3b9f3e.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_053ww"]
+shader = ExtResource("6_kcjlx")
+shader_parameter/blur_size = 7.0
+
+[node name="main_menu" type="Node3D"]
+script = ExtResource("1_66eox")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = SubResource("CompressedTexture2D_privy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -162.0
+offset_top = -99.0
+offset_right = 181.0
+offset_bottom = 143.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NewGameButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "New Game"
+
+[node name="ScoresButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Scores "
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Quit "
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(964, 216)
+scale = Vector2(1.01083, 1)
+texture = ExtResource("6_umd6g")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_ofhgs")
+volume_db = -8.362
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_053ww")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = 1034.0
+offset_right = 5.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.44)
+size_flags_vertical = 8
+color = Color(0, 0, 0, 0.741176)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -4.0
+offset_top = 1031.0
+offset_right = 1905.0
+offset_bottom = 1079.0
+theme_override_font_sizes/font_size = 28
+text = "AWSD-move       Shift-run      Space-jump      Escape-free mouse      Left click-lock mouse      Objective-Score 75pts under 75s!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ScoresButton" to="." method="_on_scores_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

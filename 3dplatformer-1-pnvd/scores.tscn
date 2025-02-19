@@ -1,0 +1,75 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3xuds1p6qupv"]
+
+[ext_resource type="Script" path="res://scores.gd" id="1_388w3"]
+[ext_resource type="PackedScene" uid="uid://clutpyanml8w7" path="res://end_screen.tscn" id="1_m342g"]
+
+[node name="scores" type="Node3D"]
+script = ExtResource("1_388w3")
+
+[node name="EndScreen" parent="." instance=ExtResource("1_m342g")]
+script = null
+
+[node name="Label2" parent="EndScreen" index="2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -188.0
+offset_top = -386.0
+offset_right = 188.0
+offset_bottom = 109.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+
+[node name="PlayBttn" parent="EndScreen" index="3"]
+visible = false
+
+[node name="MenuBttn" parent="EndScreen" index="4"]
+visible = false
+
+[node name="Label" parent="EndScreen" index="5"]
+visible = false
+
+[node name="WonLabel" parent="EndScreen" index="6"]
+visible = false
+
+[node name="Reset" type="Button" parent="EndScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.0
+offset_top = 151.0
+offset_right = 141.0
+offset_bottom = 215.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 40
+text = "Reset Scores"
+
+[node name="Back" type="Button" parent="EndScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.0
+offset_top = 229.0
+offset_right = 141.0
+offset_bottom = 292.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 40
+text = "Back"
+
+[connection signal="pressed" from="EndScreen/Reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="EndScreen/Back" to="." method="_on_back_pressed"]
+
+[editable path="EndScreen"]

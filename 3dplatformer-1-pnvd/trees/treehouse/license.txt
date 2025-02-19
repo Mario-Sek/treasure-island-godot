@@ -1,0 +1,11 @@
+Model Information:
+* title:	treehouse
+* source:	https://sketchfab.com/3d-models/treehouse-45fac2c148b24eeb9cdebb1d0036e9b1
+* author:	y.hiu (https://sketchfab.com/too.yulianto)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "treehouse" (https://sketchfab.com/3d-models/treehouse-45fac2c148b24eeb9cdebb1d0036e9b1) by y.hiu (https://sketchfab.com/too.yulianto) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

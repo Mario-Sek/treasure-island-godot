@@ -1,0 +1,111 @@
+[gd_scene load_steps=5 format=3 uid="uid://clutpyanml8w7"]
+
+[ext_resource type="Script" path="res://end_screen.gd" id="1_t0fie"]
+[ext_resource type="Shader" path="res://end_screen.gdshader" id="7_l1row"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_privy"]
+load_path = "res://.godot/imported/homeImg.jpg-36c273a38e5a3db6319d8511dc3b9f3e.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_83i6f"]
+shader = ExtResource("7_l1row")
+shader_parameter/blur_size = 7.0
+
+[node name="EndScreen" type="Node3D"]
+script = ExtResource("1_t0fie")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = SubResource("CompressedTexture2D_privy")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_83i6f")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.741176)
+
+[node name="Label2" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -368.0
+offset_top = 61.0
+offset_right = -93.0
+offset_bottom = 499.0
+grow_horizontal = 0
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 40
+text = "Scoreboard:"
+
+[node name="PlayBttn" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -243.0
+offset_top = 110.0
+offset_right = -11.0
+offset_bottom = 184.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 45
+text = "Play Again"
+
+[node name="MenuBttn" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 12.5
+offset_top = 110.0
+offset_right = 267.5
+offset_bottom = 184.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 45
+text = "Main menu"
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -94.0
+offset_top = -55.0
+offset_right = 94.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 50
+text = "Score: 0"
+horizontal_alignment = 1
+
+[node name="WonLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -148.0
+offset_top = -255.0
+offset_right = 149.0
+offset_bottom = -153.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 70
+text = "Try Again"
+
+[connection signal="pressed" from="PlayBttn" to="." method="_on_play_bttn_pressed"]
+[connection signal="pressed" from="MenuBttn" to="." method="_on_menu_bttn_pressed"]

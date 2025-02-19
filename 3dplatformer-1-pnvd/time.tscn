@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://rme014v3o8au"]
+
+[ext_resource type="Script" path="res://time.gd" id="1_a24gr"]
+
+[node name="Time" type="Node3D"]
+script = ExtResource("1_a24gr")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1035.0
+offset_top = 1.0
+offset_right = 1076.0
+offset_bottom = 24.0
+text = "00:00"
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.338
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
