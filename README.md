@@ -1,4 +1,4 @@
-# 3D Treasure Hunt Game – Godot Engine
+# 3D Treasure Island Game – Godot Engine
 
 A 3D first-person treasure hunt game developed in Godot. The player explores a park, collects hidden items, and races against time to reach the goal.
 
